@@ -1,0 +1,11 @@
+.pad-top {
+  padding-top:40px;
+}
+
+#messages .error {
+  color: #a94442;
+  margin-bottom:0;
+  display: block;
+  margin-top: 5px;
+  font-size:85%;
+}
