@@ -41,9 +41,12 @@ class AuthController extends BaseController {
         }
 
         if(Auth::attempt($data)){
-            return Redirect::route('signup')->withMsg('You have signed in!');
+            return Redirect::route('home')->withMsg('You have signed in!');
         }
 
         return Redirect::back()->withMsg('Invalid login!');
+    }
+
+    public function logout(){
     }
 }

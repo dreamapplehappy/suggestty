@@ -7,3 +7,5 @@ Route::get('/login', ['as'=>'login', 'uses' => 'AuthController@login']);
 Route::post('/login', ['uses' => 'AuthController@signin']);
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+
+Route::resource('topic','TopicController',['except' => ['index']]);
