@@ -53,8 +53,8 @@ class TopicController extends \BaseController {
 	public function show($id)
 	{
         $topic = Topic::find($id);
-        $author = $topic->user;
-        return View::make('topics.show')->withTopic($topic);
+        $replies = $topic->replies;
+        return View::make('topics.show',compact('topic','replies'));
 	}
 
 
