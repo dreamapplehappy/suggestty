@@ -8,8 +8,11 @@
 @stop
 
 @section('body')
-<div class="row">
-<div class="col-md-8 col-md-offset-2">
+<section class="row topic">
+<div class="col-md-1">
+ @include('topics.partials.vote')
+</div>
+<div class="col-md-8 col-md-offset-1">
 <div class="panel panel-info">
     <div class="panel-heading">{{ $topic->title }} 
         <span> Open by {{ $topic->user->name }}</span>
@@ -22,8 +25,8 @@
   </div>
 </div>
 </div>
-</div>
-<div class="row">
+</section>
+<div class="row reply">
 <div class="col-md-8 col-md-offset-2">
 @include('topics.partials.replylist')
 @include('topics.partials.replyform')
@@ -32,4 +35,5 @@
 @stop
 
 @section('scripts')
+<script src="{{asset('js/vote.js')}}"></script>
 @stop

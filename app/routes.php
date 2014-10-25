@@ -11,3 +11,5 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
 
 Route::resource('topic','TopicController',['except' => ['index']]);
 Route::resource('reply','ReplyController',['only' => ['store', 'edit','update','destroy']]);
+
+Route::post('/vote', ['before' => 'auth','as' => 'vote', 'uses' => 'VoteController@vote']);

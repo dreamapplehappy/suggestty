@@ -7,7 +7,7 @@
 + 有新的topic以及回复会有消息通知（邮件？）
 
 # database
-## user
+## users
 + id
 + email
 + name
@@ -16,7 +16,7 @@
 + reply_count
 + timestamps
 
-##topic
+##topics
 + id
 + title
 + body
@@ -25,13 +25,17 @@
 + vote_count
 + timestamp
 
-##reply
+##replies
 + id
 + body
 + topic_id
 + user_id
 + timestamp
 
+#votes
 
-##todo
+#todo
 + 登入后的跳转到前页面
++ markdown preview
++ delete confirm
++ 邮件通知

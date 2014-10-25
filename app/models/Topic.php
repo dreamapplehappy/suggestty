@@ -8,6 +8,8 @@ class Topic extends Eloquent {
         'title' => 'required',
         'body'  => 'required'
     );
+
+
     public function user()
     {
         return $this->belongsTo('User');
@@ -16,5 +18,18 @@ class Topic extends Eloquent {
     public function replies()
     {
         return $this->hasMany('Reply');
+    }
+
+    public function votes()
+    {
+        return $this->hasMany('Vote');
+    }
+
+    public function voteCount($voted){
+        if($voted){
+            $this->vote_count +=1;
+        }
+        else{ $this->vote_count -=1; }
+        $this->save();
     }
 }
