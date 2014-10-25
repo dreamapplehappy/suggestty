@@ -18,7 +18,7 @@
     {{ Form::text('title', isset($topic)?$topic->title:null, array('class' => 'form-control', 'placeholder' => 'title')) }}
 </div>
 <div class="form-group" id="editor">
-    <textarea v-model="input" name="body" class="form-control">{{{ isset($topic)?$topic->body:null }}}</textarea>
+    <textarea v-model="input" name="body" class="form-control" rows="20">{{{ isset($topic)?$topic->body:null }}}</textarea>
     <div v-html="input | marked"></div>
 </div>
 <div class="form-group">

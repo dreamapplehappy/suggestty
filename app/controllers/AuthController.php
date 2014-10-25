@@ -34,6 +34,7 @@ class AuthController extends BaseController {
     public function signin(){
         $data = Input::only('name','password');
         $rules = User::$rules;
+        $rules['name'] = 'required';
         $rules['email'] = '';
         $validator = Validator::make($data, $rules);
         if($validator->fails()){

@@ -5,6 +5,7 @@
 @stop
 
 @section('styles')
+<link rel="stylesheet" href="{{ asset('css/topic.css') }}">
 @stop
 
 @section('body')
@@ -14,14 +15,17 @@
 </div>
 <div class="col-md-8 col-md-offset-1">
 <div class="panel panel-info">
-    <div class="panel-heading">{{ $topic->title }} 
-        <span> Open by {{ $topic->user->name }}</span>
+    <div class="panel-heading">
+        {{ $topic->title }} 
     </div>
   <div class="panel-body">
       {{ $topic->body }}
   </div>
-  <div class="panel-footer">
-      this is panel-footer
+  <div class="panel-footer clearfix">
+      @if(Auth::id() == $topic->user_id)
+      <span>edit | delete</span>
+      @endif
+      <span class="right">Open By {{ $topic->user->name }}</span>
   </div>
 </div>
 </div>
